@@ -185,7 +185,7 @@ private fun ChannelDrawer(channels: List<CatalogChannelRow>, current: CatalogCha
                             Row(Modifier.padding(horizontal = 16.dp, vertical = 10.dp), verticalAlignment = Alignment.CenterVertically) {
                                 Text("${index + 1}", color = if (selected) Cinema.mint else Cinema.muted, style = MaterialTheme.typography.labelLarge,
                                     modifier = Modifier.width(40.dp))
-                                MonogramTile(channel.name, 32.dp)
+                                ChannelLogo(channel.id, channel.name, channel.logo != null, 32.dp)
                                 Spacer(Modifier.width(12.dp))
                                 Text(channel.name, color = Cinema.white, style = MaterialTheme.typography.bodyLarge, maxLines = 1,
                                     overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f))

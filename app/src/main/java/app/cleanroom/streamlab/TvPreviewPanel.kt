@@ -68,6 +68,7 @@ import androidx.media3.ui.PlayerView
 import app.cleanroom.streamlab.core.OpaqueMediaId
 import app.cleanroom.streamlab.data.CatalogChannelRow
 
+@OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
 @Composable
 fun TvPreviewPanel(allChannels: List<CatalogChannelRow>, controller: MediaController?, onSources: () -> Unit, onFullScreenChanged: (Boolean) -> Unit = {},
     onPip: (() -> Unit)? = null, onAddChannels: () -> Unit = onSources) {
@@ -211,11 +212,14 @@ fun TvPreviewPanel(allChannels: List<CatalogChannelRow>, controller: MediaContro
         }
     }
     RegisterVideoForPip(tvPlaying)
+    // Searching with the keyboard open: the picture shrinks (same surface, only resized) to leave room for results.
+    val keyboardOpen = androidx.compose.foundation.layout.WindowInsets.isImeVisible
 
     @Composable
     fun PreviewPane(modifier: Modifier, portrait: Boolean) {
         Column(modifier) {
             Box((if (fullScreen) Modifier.fillMaxWidth().weight(1f)
+                else if (portrait && keyboardOpen) Modifier.fillMaxWidth().height(96.dp)
                 else if (portrait) Modifier.fillMaxWidth().aspectRatio(16f / 9f)
                 else Modifier.fillMaxWidth().weight(1f))) {
             AndroidView(
@@ -268,7 +272,7 @@ fun TvPreviewPanel(allChannels: List<CatalogChannelRow>, controller: MediaContro
                 }
             }
             }
-            if (!fullScreen) Row(Modifier.fillMaxWidth().padding(top = 8.dp), verticalAlignment = Alignment.CenterVertically) {
+            if (!fullScreen && !keyboardOpen) Row(Modifier.fillMaxWidth().padding(top = 8.dp), verticalAlignment = Alignment.CenterVertically) {
                 Column(Modifier.weight(1f)) {
                     Text(selected.name, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold, maxLines = 1,
                         overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
@@ -310,7 +314,8 @@ fun TvPreviewPanel(allChannels: List<CatalogChannelRow>, controller: MediaContro
                     }
                 }
             }
-            androidx.compose.foundation.layout.FlowRow(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.Center) {
+            // While typing a search, the action buttons step aside so the matching channels are visible.
+            if (!keyboardOpen) androidx.compose.foundation.layout.FlowRow(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.Center) {
                 Text(androidx.compose.ui.res.pluralStringResource(R.plurals.tv_channel_count, channels.size, channels.size), style = MaterialTheme.typography.labelMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.align(Alignment.CenterVertically).padding(end = 8.dp))
                 TextButton(
@@ -352,7 +357,7 @@ fun TvPreviewPanel(allChannels: List<CatalogChannelRow>, controller: MediaContro
                     ) {
                         Row(Modifier.padding(horizontal = 10.dp, vertical = 8.dp), horizontalArrangement = Arrangement.spacedBy(12.dp),
                             verticalAlignment = Alignment.CenterVertically) {
-                            MonogramTile(channel.name, 40.dp)
+                            ChannelLogo(channel.id, channel.name, channel.logo != null, 40.dp)
                             if (channel.id in deadIds) Text(stringResource(R.string.tv_out_of_service), style = MaterialTheme.typography.labelSmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("tv-dead-${channel.id}"))
                             Text(channel.name, Modifier.weight(1f), style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold,
@@ -372,7 +377,8 @@ fun TvPreviewPanel(allChannels: List<CatalogChannelRow>, controller: MediaContro
         // Rotating into full screen must not switch layouts, or the video surface is rebuilt.
         // Plain holder, not Compose state: this runs during measure, where state writes are forbidden.
         val lastPortrait = remember { booleanArrayOf(portraitNow) }
-        if (!fullScreen) lastPortrait[0] = portraitNow
+        // The keyboard shrinks the height: switching layouts then would rebuild the search field and close the keyboard.
+        if (!fullScreen && !keyboardOpen) lastPortrait[0] = portraitNow
         val portrait = lastPortrait[0]
         // The preview keeps the same place in the tree when going full screen, so the video
         // surface is never recreated (a recreated surface stayed black on a real phone).

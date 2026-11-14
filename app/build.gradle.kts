@@ -11,8 +11,8 @@ android {
         applicationId = "app.cleanroom.streamlab"
         minSdk = 26
         targetSdk = 36
-        versionCode = 2
-        versionName = "0.2.0-qa"
+        versionCode = 3
+        versionName = "0.2.1-qa"
         testInstrumentationRunner = "app.cleanroom.streamlab.FrenchUiTestRunner"
         ndk {
             abiFilters += listOf("arm64-v8a", "x86_64")

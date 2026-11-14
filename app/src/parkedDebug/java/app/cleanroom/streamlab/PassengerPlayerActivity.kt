@@ -19,6 +19,9 @@ import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import app.cleanroom.streamlab.core.OpaqueMediaId
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.session.MediaBrowser
@@ -126,6 +129,21 @@ class PassengerPlayerActivity : ComponentActivity() {
             setPadding(dp(4), dp(2), dp(4), 0)
         }
         left.addView(status, LinearLayout.LayoutParams(-1, -2))
+
+        // Visible way into full screen (tapping the picture also works, but is not obvious).
+        left.addView(Button(this).apply {
+            text = getString(R.string.tv_fullscreen)
+            setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_fullscreen, 0, 0, 0)
+            compoundDrawablePadding = dp(8)
+            compoundDrawableTintList = ColorStateList.valueOf(Color.rgb(6, 30, 24))
+            setPadding(dp(18), 0, dp(22), 0)
+            isAllCaps = false
+            textSize = 16f
+            setTextColor(Color.rgb(6, 30, 24))
+            backgroundTintList = ColorStateList.valueOf(Color.rgb(114, 226, 190))
+            contentDescription = getString(R.string.pass_tv_fullscreen_open)
+            setOnClickListener { showFullScreen() }
+        }, LinearLayout.LayoutParams(-2, dp(52)).apply { topMargin = dp(8) })
 
         val right = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
@@ -296,7 +314,10 @@ class PassengerPlayerActivity : ComponentActivity() {
                 gravity = Gravity.START or Gravity.CENTER_VERTICAL
                 minHeight = dp(54)
                 contentDescription = getString(R.string.pass_tv_select_channel, title)
+                compoundDrawablePadding = dp(12)
                 setOnClickListener {
+                    // Second tap on the channel already shown: full screen, like on the phone.
+                    if (selectedIndex == index && channels.isNotEmpty()) { showFullScreen(); return@setOnClickListener }
                     selectedIndex = index
                     renderSelection()
                     playPreview(index)
@@ -306,13 +327,42 @@ class PassengerPlayerActivity : ComponentActivity() {
             })
         }
         refreshSelectedButton()
+        loadLogos()
+    }
+
+    /** Channel logos beside the names; channels without one keep their plain button. */
+    private fun loadLogos() {
+        val app = applicationContext as StreamLabApplication
+        val size = dp(40)
+        channels.forEachIndexed { index, item ->
+            val id = OpaqueMediaId.channelId(item.mediaId) ?: return@forEachIndexed
+            lifecycleScope.launch {
+                val logo = ChannelLogos.load(app, id) ?: return@launch
+                val button = channelList.getChildAt(index) as? Button ?: return@launch
+                button.setCompoundDrawablesRelative(logoTile(logo, size), null, null, null)
+            }
+        }
+    }
+
+    private fun logoTile(logo: android.graphics.Bitmap, size: Int): android.graphics.drawable.BitmapDrawable {
+        val tile = android.graphics.Bitmap.createBitmap(size, size, android.graphics.Bitmap.Config.ARGB_8888)
+        val canvas = android.graphics.Canvas(tile)
+        val paint = android.graphics.Paint(android.graphics.Paint.ANTI_ALIAS_FLAG or android.graphics.Paint.FILTER_BITMAP_FLAG)
+        paint.color = ChannelLogos.tileColor(logo)
+        canvas.drawRoundRect(0f, 0f, size.toFloat(), size.toFloat(), size / 4f, size / 4f, paint)
+        val inner = size * 0.82f
+        val scale = minOf(inner / logo.width, inner / logo.height)
+        val w = logo.width * scale
+        val h = logo.height * scale
+        canvas.drawBitmap(logo, null, android.graphics.RectF((size - w) / 2, (size - h) / 2, (size + w) / 2, (size + h) / 2), paint)
+        return android.graphics.drawable.BitmapDrawable(resources, tile).apply { setBounds(0, 0, size, size) }
     }
 
     private fun refreshSelectedButton() {
         for (i in 0 until channelList.childCount) {
             val button = channelList.getChildAt(i) as? Button ?: continue
             val selected = i == selectedIndex
-            button.alpha = if (selected) 1f else 0.78f
+            button.alpha = if (selected) 1f else 0.9f
             button.backgroundTintList = ColorStateList.valueOf(
                 if (selected) Color.rgb(72, 92, 104) else Color.rgb(76, 76, 80)
             )

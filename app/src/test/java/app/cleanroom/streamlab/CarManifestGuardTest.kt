@@ -26,8 +26,14 @@ class CarManifestGuardTest {
         val parked = manifest("parkedDebug")
         assertFalse("the full phone app must stay in the personal build", Regex("MainActivity\"\\s*tools:node=\"remove\"").containsMatchIn(parked))
         assertFalse("the player must stay in the personal build", Regex("PlaybackService\"\\s*tools:node=\"remove\"").containsMatchIn(parked))
-        val car = listOf(File("src/parkedDebug/res/xml/automotive_app_desc.xml"), File("app/src/parkedDebug/res/xml/automotive_app_desc.xml")).first { it.exists() }.readText()
-        assertTrue("radio and TV sound stay in Android Auto's media screen", car.contains("name=\"media\""))
+    }
+
+    // Android Auto shows one entry per app and a media app hides its parked activity
+    // (Desktop Head Unit, 2026-11-14): the personal build drops the media declaration so the
+    // full-screen app is in the grid; the Play build keeps it for its audio-only car screen.
+    @Test fun parkedEntryIsNotHiddenBehindTheMediaApp() {
+        assertTrue(Regex("com\\.google\\.android\\.gms\\.car\\.application\"\\s*tools:node=\"remove\"").containsMatchIn(manifest("parkedDebug")))
+        assertTrue(manifest("main").contains("com.google.android.gms.car.application"))
     }
 
     @Test fun playBuildsAreNeverGames() {

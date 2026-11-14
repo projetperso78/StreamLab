@@ -150,6 +150,7 @@ private fun sectionSubtitle(section: String): String = when (section) {
     else -> R.string.subtitle_settings
 })
 
+@OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
 @Composable
 fun StreamLabScreen(app: StreamLabApplication, controller: MediaController?, isPip: Boolean, initialSection: String = "Apps", sectionRequestId: Int = 0, onPip: () -> Unit) {
     val repo = app.repository
@@ -278,6 +279,8 @@ fun StreamLabScreen(app: StreamLabApplication, controller: MediaController?, isP
             val screenModifier = if (isPip && playing != null) Modifier.fillMaxSize() else Modifier.fillMaxSize().safeDrawingPadding()
             BoxWithConstraints(screenModifier) {
             val wide = maxWidth >= 700.dp
+            // Keyboard open: the bottom bar and mini player step aside so search results stay visible.
+            val keyboardOpen = androidx.compose.foundation.layout.WindowInsets.isImeVisible
             val compactNavigation = MainNavigationLayout.iconOnly(
                 maxWidth.value.toInt(), LocalDensity.current.fontScale,
             )
@@ -444,7 +447,7 @@ fun StreamLabScreen(app: StreamLabApplication, controller: MediaController?, isP
                         }
                         }
                     }
-                    if (playing == null && !tvFullScreen && section != "Live" && section != "Drive") {
+                    if (playing == null && !tvFullScreen && !keyboardOpen && section != "Live" && section != "Drive") {
                         NowPlayingBar(
                             controller = controller,
                             onOpen = { mediaId ->
@@ -454,7 +457,7 @@ fun StreamLabScreen(app: StreamLabApplication, controller: MediaController?, isP
                             modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp),
                         )
                     }
-                    if (!wide && playing == null && !tvFullScreen) NavigationBar {
+                    if (!wide && playing == null && !tvFullScreen && !keyboardOpen) NavigationBar {
                         sections.forEach { item ->
                             val label = localizedNavLabel(item.id)
                             NavigationBarItem(
@@ -961,6 +964,10 @@ private fun ChannelPanel(
                             Modifier.fillMaxWidth().clickable { onPlay(channel) }.padding(if (dense) 8.dp else 14.dp),
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
+                            if (channel.category != "Local video") {
+                                ChannelLogo(channel.id, channel.name, channel.logo != null, if (dense) 36.dp else 44.dp)
+                                Spacer(Modifier.width(12.dp))
+                            }
                             Column(Modifier.weight(1f)) {
                                 Text(channel.name, fontWeight = FontWeight.SemiBold)
                                 val details = listOfNotNull(

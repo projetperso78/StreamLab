@@ -6,6 +6,12 @@
         android:appCategory="game"
         tools:replace="android:label">
 
+        <!-- Android Auto shows one launcher entry per app, and a media app wins over its parked
+             activity: declared as media, this build's full-screen car app never appeared in the grid
+             (checked on the Desktop Head Unit, 2026-11-14). The parked app keeps the entry; the
+             sound goes on through the playback service when Android Auto closes it on the move. -->
+        <meta-data android:name="com.google.android.gms.car.application" tools:node="remove" />
+
         <!-- Complete app on its own: the whole phone app and its player are kept. A single phone
              icon: the car launcher entry below opens this screen when tapped on the phone. -->
         <activity android:name=".MainActivity" android:exported="false" tools:node="merge" tools:replace="android:exported">

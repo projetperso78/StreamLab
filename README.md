@@ -56,7 +56,7 @@ et sans que rien ne quitte ton téléphone.
 | | **StreamLab** (Google Play) | **StreamLab Passagers** (édition personnelle) |
 |---|---|---|
 | Toute l'appli : radio, TV, multivue, vidéos, disque réseau, Cast, favoris, réveil… | ✅ | ✅ identique |
-| Android Auto — radio et son des chaînes (écran multimédia) | ✅ | ✅ |
+| Android Auto — radio et son des chaînes (écran multimédia) | ✅ | le son en cours continue, sans les listes |
 | S'installe seule (aucune autre appli requise) | ✅ | ✅ |
 | Android Auto — **vidéo à l'arrêt** (voiture garée) | — | ✅ |
 | En roulant | audio uniquement | Android Auto ferme l'image, **le son continue** |
@@ -97,6 +97,7 @@ Aucune règle de sécurité de conduite n'est contournée.
 ### 📺 TV
 - **Tes chaînes, rangées par pays et par langue** — le classement lit le flux de diffusion (« @FR ») avant le nom du propriétaire, et ne confond pas « SD/HD » avec un pays.
 - **Lecteur plein écran** avec bandeau « en direct », **programme en cours / à suivre** (guide XMLTV), zapping au doigt et liste des chaînes.
+- **Logos des chaînes** dans toutes les listes (téléphone et écran voiture), lus dans ta playlist ; les logos blancs ont un fond sombre.
 - **Vérification des chaînes** : un bouton teste les flux et signale ceux qui ne répondent pas.
 - **Multivue** : **2 à 4 chaînes en même temps**, en mosaïque, le son sur celle que tu choisis.
 - **Image dans l'image (PiP)** : la TV continue dans une petite fenêtre quand tu quittes l'appli.
@@ -175,7 +176,8 @@ Prérequis : **Android 15 ou plus** et un écran de voiture tactile.
 1. Installe l'APK `parkedDebug` (nom affiché : **StreamLab Passagers**). C'est l'appli complète : pas besoin d'installer aussi la version Play.
 2. Sur le téléphone : **Android Auto → Paramètres** → touche 10 fois **« Version »** pour activer le mode développeur.
 3. Menu ⋮ → **Paramètres pour les développeurs** → coche **« Sources inconnues »**.
-4. Rebranche le téléphone : l'appli apparaît dans le lanceur de la voiture.
+4. Rebranche le téléphone. Voiture à l'arrêt, ouvre la grille des applis (les 9 points) et touche **« StreamLab Passagers »**,
+   puis **« TV en direct »** : la chaîne s'affiche, le bouton **« Plein écran »** (ou un 2ᵉ appui sur la chaîne) la met en plein écran.
 
 **À l'arrêt** la chaîne s'affiche en plein écran ; **en roulant** Android Auto ferme l'image et **le son continue**
 (avec les commandes sur l'écran multimédia et au volant) ; **de nouveau à l'arrêt**, la même chaîne revient en plein écran.
@@ -215,7 +217,7 @@ depuis des variables d'environnement.
 ## Qualité
 
 - **Architecture** : Kotlin, Jetpack Compose, Media3 (ExoPlayer, `MediaLibraryService`, `MediaController`), Room, OkHttp.
-- **Tests** : 132 tests unitaires et 90 tests instrumentés (navigation, lecture, Android Auto, Cast, multivue, disque réseau, radio, failover…).
+- **Tests** : 133 tests unitaires et 90 tests instrumentés (navigation, lecture, Android Auto, Cast, multivue, disque réseau, radio, failover…).
 - **Robustesse** : plus de 75 000 actions aléatoires (stress test *monkey*) sur les versions debug et release, sans plantage.
 - **Version publiée** : code réduit et obfusqué (R8), lint sans erreur sur toutes les variantes.
 - **Sécurité** :

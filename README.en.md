@@ -58,7 +58,7 @@ and nothing leaving your phone.
 | | **StreamLab** (Google Play) | **StreamLab Passengers** (personal edition) |
 |---|---|---|
 | The whole app: radio, TV, multiview, videos, network drive, Cast, favourites, alarm… | ✅ | ✅ identical |
-| Android Auto — radio and channel sound (media screen) | ✅ | ✅ |
+| Android Auto — radio and channel sound (media screen) | ✅ | the current sound goes on, no lists |
 | Installs on its own (no other app needed) | ✅ | ✅ |
 | Android Auto — **video while parked** | — | ✅ |
 | While driving | audio only | Android Auto closes the picture, **the sound goes on** |
@@ -99,6 +99,7 @@ No driving-safety rule is bypassed.
 ### 📺 TV
 - **Your channels, sorted by country and language** — sorting reads the broadcast feed ("@FR") before the owner's name, and never mistakes "SD/HD" for a country.
 - **Full-screen player** with a "live" banner, **now / next** (XMLTV guide), swipe to zap and a channel list.
+- **Channel logos** in every list (phone and car screen), read from your playlist; white logos get a dark tile.
 - **Channel check**: one button tests the streams and flags those that do not respond.
 - **Multiview**: **2 to 4 channels at once**, as a mosaic, with sound on the one you pick.
 - **Picture-in-picture (PiP)**: TV keeps playing in a small window when you leave the app.
@@ -177,7 +178,8 @@ Requirements: **Android 15 or later** and a touch screen in the car.
 1. Install the `parkedDebug` APK (shown as **StreamLab Passagers**). It is the complete app: no need to install the Play edition too.
 2. On the phone: **Android Auto → Settings** → tap **"Version"** 10 times to turn on developer mode.
 3. ⋮ menu → **Developer settings** → tick **"Unknown sources"**.
-4. Plug the phone in again: the app appears in the car's launcher.
+4. Plug the phone in again. With the car parked, open the app grid (the 9 dots) and tap **"StreamLab Passagers"**,
+   then **"TV en direct"**: the channel shows; the **"Plein écran"** button (or a second tap on the channel) makes it full screen.
 
 **While parked** the channel plays full screen; **while driving** Android Auto closes the picture and **the sound goes on**
 (with controls on the media screen and the steering wheel); **parked again**, the same channel comes back full screen.
@@ -216,7 +218,7 @@ There is no key and no secret in this repository: release signing is read only f
 ## Quality
 
 - **Architecture**: Kotlin, Jetpack Compose, Media3 (ExoPlayer, `MediaLibraryService`, `MediaController`), Room, OkHttp.
-- **Tests**: 132 unit tests and 90 instrumented tests (navigation, playback, Android Auto, Cast, multiview, network drive, radio, failover…).
+- **Tests**: 133 unit tests and 90 instrumented tests (navigation, playback, Android Auto, Cast, multiview, network drive, radio, failover…).
 - **Robustness**: more than 75,000 random actions (*monkey* stress test) on the debug and release builds, with no crash.
 - **Release build**: shrunk and obfuscated code (R8), lint clean on every variant.
 - **Security**:
