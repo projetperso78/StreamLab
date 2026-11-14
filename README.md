@@ -1,5 +1,7 @@
 <div align="center">
 
+**Français** · [English](README.en.md) · [العربية](README.ar.md)
+
 # StreamLab
 
 **Radio du monde entier, tes chaînes TV et tes vidéos — sur ton téléphone, ta TV et dans la voiture.**
@@ -17,7 +19,7 @@ Application Android native (Kotlin · Jetpack Compose · Media3), sans compte, s
 <a href="#ce-que-fait-streamlab-de-a-%C3%A0-z">Fonctions</a> ·
 <a href="#android-auto">Android Auto</a> ·
 <a href="#confidentialit%C3%A9">Confidentialité</a> ·
-<a href="#english-summary">English</a>
+<a href="#licence-et-propri%C3%A9t%C3%A9">Licence</a>
 
 <br>
 
@@ -59,7 +61,7 @@ et sans que rien ne quitte ton téléphone.
 | En roulant | audio uniquement | Android Auto ferme l'image, **le son continue** |
 | De nouveau à l'arrêt | — | **la même chaîne revient en plein écran** |
 | Écran de la voiture maintenu allumé (option) | — | ✅ |
-| Distribution | Google Play — *bientôt* | non distribuée |
+| Distribution | Google Play — *bientôt* | non distribuée sur les boutiques |
 
 La vidéo sur l'écran de la voiture s'appuie sur la catégorie officielle **« applis à l'arrêt »** d'Android Auto
 (Android 15 et plus) : c'est Android Auto lui-même qui coupe l'image dès que la voiture roule.
@@ -80,13 +82,16 @@ Aucune règle de sécurité de conduite n'est contournée.
 - **Favoris en une touche** (étoile), et **« Écouter mes radios en continu »** : tes favorites s'enchaînent comme une playlist.
 - **Sources de secours** : si une radio tombe, StreamLab essaie automatiquement jusqu'à **3 adresses** avant de passer à la suivante.
 - **Pas de publicité en boucle** : le lecteur ne recoupe plus les longs flux (la pub d'ouverture ne revient plus toutes les 30 s).
-- **Radio-réveil** : réveille-toi avec ta station préférée.
+- **Radio-réveil** : à l'heure choisie, une fois, en semaine ou tous les jours, avec ta station préférée.
 - **Commande vocale** : « Ok Google, mets RTL » trouve la meilleure correspondance, même si elle n'est pas dans tes favoris.
 
 <p align="center">
-<img src="docs/screenshots/02-radio-pays.png" width="220" alt="Radios par pays">
-<img src="docs/screenshots/07-radio-lecture.png" width="220" alt="Lecture d'une radio">
+<img src="docs/screenshots/02-radio-pays.png" width="200" alt="Radios par pays">
+<img src="docs/screenshots/07-radio-lecture.png" width="200" alt="Lecture d'une radio">
+<img src="docs/screenshots/17-favoris.png" width="200" alt="Favoris">
+<img src="docs/screenshots/15-reveil.png" width="200" alt="Radio-réveil">
 </p>
+<p align="center"><sub>Radios par pays · lecture · favoris (avec le mini-lecteur en bas) · radio-réveil</sub></p>
 
 ### 📺 TV
 - **Tes chaînes, rangées par pays et par langue** — le classement lit le flux de diffusion (« @FR ») avant le nom du propriétaire, et ne confond pas « SD/HD » avec un pays.
@@ -99,15 +104,22 @@ Aucune règle de sécurité de conduite n'est contournée.
 - **Sources de secours** par chaîne, comme pour la radio.
 
 <p align="center">
-<img src="docs/screenshots/04-tv-plein-ecran.png" width="220" alt="TV en plein écran">
-<img src="docs/screenshots/05-multivue.png" width="220" alt="Multivue">
-<img src="docs/screenshots/09-ajouter-chaines.png" width="220" alt="Ajouter mes chaînes">
+<img src="docs/screenshots/04-tv-plein-ecran.png" width="200" alt="TV en plein écran">
+<img src="docs/screenshots/05-multivue.png" width="200" alt="Multivue">
+<img src="docs/screenshots/09-ajouter-chaines.png" width="200" alt="Ajouter mes chaînes">
 </p>
+<p align="center"><sub>Plein écran · multivue · ajouter ses chaînes. Les images de démonstration viennent du film libre <i>Big Buck Bunny</i> (CC BY 3.0).</sub></p>
 
 ### 🎬 Vidéos et disque réseau
-- **Disque réseau à la maison (WebDAV)** : Synology, QNAP, Nextcloud, box… Parcours tes dossiers et lance un film **sans le copier** sur le téléphone.
+- **Disque réseau à la maison (WebDAV)** : Synology, QNAP, Freebox, Nextcloud… Parcours tes dossiers et lance un film **sans le copier** sur le téléphone.
 - **Fichiers du téléphone** et **« Continuer à regarder »** à l'endroit exact où tu t'étais arrêté.
 - **Ouvrir dans un autre lecteur** (VLC, MX Player…) en un geste.
+
+<p align="center">
+<img src="docs/screenshots/18-ajouter-video.png" width="200" alt="Ajouter une vidéo">
+<img src="docs/screenshots/19-disque-reseau.png" width="200" alt="Disque réseau">
+</p>
+<p align="center"><sub>Choisir entre le téléphone et le disque réseau · identifiants chiffrés sur l'appareil</sub></p>
 
 ### 📡 Sur la TV du salon
 - **Google Cast** : envoie la radio, une chaîne ou une vidéo du téléphone vers ta TV / Chromecast.
@@ -117,22 +129,37 @@ Aucune règle de sécurité de conduite n'est contournée.
 - Arborescence claire au volant : **Radio par pays, Favoris, Récents, TV, Sources**.
 - **Station suivante / précédente** depuis le volant, commande vocale, pochettes et logos.
 - Messages d'erreur courts et lisibles (jamais de codes techniques à l'écran).
-- Édition Passagers : vidéo à l'arrêt, son seul en roulant, retour automatique en plein écran à l'arrêt (voir plus bas).
+- Édition Passagers : vidéo à l'arrêt, son seul en roulant, retour automatique en plein écran à l'arrêt ([voir plus bas](#android-auto)).
 
 ### 🧭 Pratique
 - **Favoris** et **Récents** partout.
-- **Partager avec un ami** : tes radios favorites et tes listes, par **QR code** (jamais d'identifiants dans le code).
-- **Mode enfants** protégé par un code PIN.
+- **Partager avec un ami** : tes radios favorites et tes listes, par **QR code** (jamais d'identifiants ni de mot de passe dans le code).
+- **Mode enfants** : l'appli se limite à tes favoris, protégée par un code parent.
 - **Économie de données** : en 4G/5G, la vidéo passe en 480p (environ 3 fois moins de données) ; qualité maximale en Wi-Fi.
 - **Mode hors ligne** clair : un message simple au lieu d'un écran d'erreur.
 - **Conseils au premier lancement**, discrets, une seule fois.
 - **Services web** : raccourcis vers les applis officielles (Netflix, YouTube, Prime Video, Disney+, Twitch, Plex, Jellyfin, Emby). StreamLab **n'intègre ni ne contourne** leur lecteur ni leurs protections.
 
-### 🎨 Interface
+<p align="center">
+<img src="docs/screenshots/14-explorer.png" width="200" alt="Menu Plus">
+<img src="docs/screenshots/16-partage.png" width="200" alt="Partage par QR code">
+<img src="docs/screenshots/20-enfants-confidentialite.png" width="200" alt="Mode enfants et confidentialité">
+</p>
+<p align="center"><sub>Menu « Plus » · partage par QR code · mode enfants et confidentialité</sub></p>
+
+### 🎨 Interface et langues
 - Thème **Cinéma** sombre, **clair** ou **système** ; liste compacte en option.
 - Icônes vectorielles nettes, logos des stations, monogrammes élégants quand une station n'a pas de logo.
-- **Trois langues complètes** : français, anglais, **arabe (de droite à gauche)** — ou la langue du système.
+- **Trois langues complètes** : français, anglais, **arabe (de droite à gauche)** — ou la langue du système. La langue se choisit au premier lancement et se change à tout moment dans les réglages.
 - Accessibilité : descriptions pour les lecteurs d'écran, grandes zones tactiles.
+
+<p align="center">
+<img src="docs/screenshots/10-langues.png" width="200" alt="Choix de la langue">
+<img src="docs/screenshots/12-accueil-arabe.png" width="200" alt="Accueil en arabe">
+<img src="docs/screenshots/13-radio-arabe.png" width="200" alt="Radio en arabe">
+<img src="docs/screenshots/21-theme-clair.png" width="200" alt="Thème clair">
+</p>
+<p align="center"><sub>Choix de la langue au premier lancement · l'appli en arabe, de droite à gauche · thème clair</sub></p>
 
 ---
 
@@ -152,6 +179,16 @@ Prérequis : **Android 15 ou plus** et un écran de voiture tactile.
 **À l'arrêt** la chaîne s'affiche en plein écran ; **en roulant** Android Auto ferme l'image et **le son continue**
 (avec les commandes sur l'écran multimédia et au volant) ; **de nouveau à l'arrêt**, la même chaîne revient en plein écran.
 Dans les réglages de l'écran voiture, l'option **« Garder l'écran allumé »** évite la mise en veille pendant la vidéo.
+
+<p align="center">
+<img src="docs/screenshots/22-ecran-voiture.png" width="820" alt="Écran voiture : accueil passagers">
+</p>
+<p align="center">
+<img src="docs/screenshots/23-voiture-reglages.png" width="405" alt="Écran voiture : garder l'écran allumé">
+<img src="docs/screenshots/24-voiture-radio.png" width="405" alt="Écran voiture : radio">
+</p>
+<p align="center"><sub>L'écran voiture de StreamLab Passagers : accueil, réglages (« Garder l'écran allumé »), radio.
+Captures faites sur un écran secondaire de 1920×720 de l'émulateur Android, qui simule l'écran de la voiture.</sub></p>
 
 ---
 
@@ -174,7 +211,7 @@ depuis des variables d'environnement.
 ## Qualité
 
 - **Architecture** : Kotlin, Jetpack Compose, Media3 (ExoPlayer, `MediaLibraryService`, `MediaController`), Room, OkHttp.
-- **Tests** : 131 tests unitaires et 90 tests instrumentés (navigation, lecture, Android Auto, Cast, multivue, disque réseau, radio, failover…).
+- **Tests** : 132 tests unitaires et 90 tests instrumentés (navigation, lecture, Android Auto, Cast, multivue, disque réseau, radio, failover…).
 - **Robustesse** : plus de 75 000 actions aléatoires (stress test *monkey*) sur les versions debug et release, sans plantage.
 - **Version publiée** : code réduit et obfusqué (R8), lint sans erreur sur toutes les variantes.
 - **Sécurité** :
@@ -219,21 +256,4 @@ Voir [LICENSE](LICENSE) et [NOTICE](NOTICE.md).
 Les noms et logos de services tiers (Netflix, YouTube, Prime Video, Disney+, Android Auto, Google Cast…)
 appartiennent à leurs propriétaires respectifs. StreamLab n'est affilié à aucun d'eux.
 
----
-
-## English summary
-
-**StreamLab** is a native Android app (Kotlin, Jetpack Compose, Media3) for **world radio, your own TV channels and videos** — on the phone, on the TV (Google Cast) and **in the car (Android Auto)**. No account, no ads, no tracking.
-
-- 40,000+ radio stations by country (Radio Browser), "near you", top/trending, clean names, song on air, favourites playlist, automatic backup sources (up to 3), radio alarm, voice search ("Ok Google, play …").
-- Your own TV channels (M3U, Xtream Codes, XMLTV), sorted by country and language, full-screen player with now/next, channel health check, **multiview (2–4 channels)**, picture-in-picture, playback speed.
-- Home network drive (WebDAV) without copying files, continue watching, external player, Google Cast, QR sharing, kids mode with PIN, data saver on mobile data, offline mode.
-- French, English and Arabic (RTL). Dark, light or system theme.
-- **Two editions**: the Google Play edition (audio in Android Auto) and a personal "Passengers" edition (= the whole Play app + the car screen, same code) that uses Android Auto's official *parked apps* category: video while parked, audio only while driving, back to full screen when parked again.
-- StreamLab provides **no content**: users add their own lawful sources.
-
-**All rights reserved.** You may view, download, build and install the app on your own devices for personal, non-commercial use. Redistribution, publishing (including on app stores), commercial use and reuse of the code, name, icon or interface require written permission; this is not an open-source licence.
-
-> ⚠️ **Disclaimer.** Provided **"as is", without any warranty**. You download, build, install and use it **entirely at your own risk**. To the fullest extent permitted by law, the author is **in no way liable for what you do with it**: the sources and content you add, use in a car (the driver alone is responsible for driving; the Passengers edition is for passengers and parked cars only), any damage, data loss or charges, or versions modified by others.
-
-Google Play link: *coming soon*.
+Contact : contactstreamlab@gmail.com

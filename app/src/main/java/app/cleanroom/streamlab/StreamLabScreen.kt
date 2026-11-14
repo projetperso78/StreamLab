@@ -257,6 +257,19 @@ fun StreamLabScreen(app: StreamLabApplication, controller: MediaController?, isP
     }
 
     val dark = prefs.theme == "dark" || (prefs.theme == "system" && androidx.compose.foundation.isSystemInDarkTheme())
+    // Light theme: dark clock and battery icons, otherwise they are white on a white background.
+    val barsView = androidx.compose.ui.platform.LocalView.current
+    val lightBars = prefs.theme == "light"
+    androidx.compose.runtime.SideEffect {
+        var context = barsView.context
+        while (context is android.content.ContextWrapper && context !is android.app.Activity) context = context.baseContext
+        (context as? android.app.Activity)?.window?.let { window ->
+            androidx.core.view.WindowCompat.getInsetsController(window, barsView).apply {
+                isAppearanceLightStatusBars = lightBars
+                isAppearanceLightNavigationBars = lightBars
+            }
+        }
+    }
     // Small window outside the app: only the picture of what is playing.
     if (isPip && playing == null) { PipVideo(controller); return }
     // The cinema palette is StreamLab's look; "light" in Settings keeps a light variant for those who need it.
