@@ -2,31 +2,56 @@ StreamLab — Copyright (c) 2026 Younes Ajbilou. Tous droits réservés / All ri
 
 FRANÇAIS
 
+1. Propriété
 Le code source, les ressources graphiques, l'icône, le nom « StreamLab », l'interface, les textes
 et les captures d'écran contenus dans ce dépôt sont la propriété exclusive de leur auteur.
 
-Ce dépôt est rendu public uniquement pour permettre sa consultation. Aucune licence, expresse ou
-implicite, n'est accordée. Sauf accord écrit préalable de l'auteur, il est interdit de :
-  - copier, reproduire ou modifier tout ou partie du code ou des ressources ;
-  - distribuer, publier ou mettre à disposition le logiciel ou une version dérivée, notamment
-    sur une boutique d'applications (Google Play ou autre) ;
+2. Ce qui est autorisé
+Toute personne peut consulter ce dépôt, le télécharger, le compiler et installer l'application
+sur ses propres appareils, pour son usage personnel, privé et non commercial.
+
+3. Ce qui est interdit sans accord écrit préalable de l'auteur
+  - distribuer, publier, vendre ou mettre à disposition le logiciel, une version compilée ou une
+    version dérivée, notamment sur une boutique d'applications (Google Play ou autre) ;
+  - réutiliser tout ou partie du code ou des ressources dans un autre projet ;
   - réutiliser le nom, l'icône, l'interface ou les captures pour un autre produit ;
+  - faire un usage commercial du logiciel ;
   - utiliser ce dépôt pour entraîner ou alimenter un système de génération de code.
+Aucune autre licence, expresse ou implicite, n'est accordée.
 
-La seule exception est celle prévue par les conditions d'utilisation de GitHub : afficher le
-dépôt et le dupliquer (« fork ») sur GitHub, sans autre droit d'utilisation.
-
-LE LOGICIEL EST FOURNI « EN L'ÉTAT », SANS GARANTIE D'AUCUNE SORTE.
+4. Aucune garantie, aucune responsabilité
+LE LOGICIEL EST FOURNI « EN L'ÉTAT », SANS GARANTIE D'AUCUNE SORTE. Celui qui le télécharge,
+le compile, l'installe ou l'utilise le fait à ses seuls risques et sous sa seule responsabilité.
+Dans toute la mesure permise par la loi, l'auteur n'est en aucun cas responsable de l'usage qui
+est fait du logiciel ni de ses conséquences, notamment :
+  - des sources, chaînes, listes ou contenus ajoutés par l'utilisateur et de leur légalité ;
+  - de l'utilisation en voiture : le conducteur reste seul responsable de sa conduite et du
+    respect du code de la route ; l'édition « Passagers » est réservée aux passagers et à la
+    voiture à l'arrêt ;
+  - de tout dommage, perte de données, panne d'appareil, frais de données mobiles ou litige ;
+  - de toute version modifiée, compilée ou distribuée par un tiers.
 
 ENGLISH
 
+1. Ownership
 All source code, graphic assets, the icon, the "StreamLab" name, the user interface, texts and
 screenshots in this repository are the exclusive property of the author.
 
-This repository is public for viewing only. No licence, express or implied, is granted. Without the
-author's prior written permission you may not copy, modify, distribute, publish (including on any
-app store), reuse the name, icon, interface or screenshots, or use this repository to train or
-feed a code-generation system. The only exception is what GitHub's Terms of Service allow: viewing
-and forking within GitHub, with no further right of use.
+2. What you may do
+Anyone may view this repository, download it, build it and install the app on their own devices,
+for personal, private and non-commercial use.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
+3. What you may not do without the author's prior written permission
+Distribute, publish, sell or make available the software, a build or a derivative (including on
+any app store); reuse any part of the code or assets in another project; reuse the name, icon,
+interface or screenshots; use the software commercially; or use this repository to train or feed
+a code-generation system. No other licence, express or implied, is granted.
+
+4. No warranty, no liability
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. Anyone who downloads, builds,
+installs or uses it does so entirely at their own risk and under their own responsibility. To the
+fullest extent permitted by law, the author is in no way liable for any use made of the software
+or its consequences, including the sources, channels or content added by users and their
+legality; use in a car (the driver alone is responsible for driving and traffic laws; the
+"Passengers" edition is for passengers and parked cars only); any damage, data loss, device
+failure, mobile data charges or dispute; and any version modified, built or distributed by others.

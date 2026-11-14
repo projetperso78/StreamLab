@@ -200,9 +200,20 @@ Politique complète : [docs/play/POLITIQUE_CONFIDENTIALITE.md](docs/play/POLITIQ
 
 © 2026 Younes Ajbilou — **Tous droits réservés.**
 
-Ce dépôt est public **pour consultation uniquement**. Aucune licence open source n'est accordée :
-la copie, la modification, la redistribution, la publication sur une boutique d'applications ou la réutilisation
-du code, du nom **StreamLab**, de l'icône, de l'interface ou des captures sont **interdites sans accord écrit**.
+✅ **Autorisé** : consulter ce dépôt, le télécharger, le compiler et installer l'appli sur tes propres appareils,
+pour un usage **personnel, privé et non commercial**.
+
+⛔ **Interdit sans accord écrit** : redistribuer ou publier l'appli (ou une version modifiée), notamment sur une
+boutique d'applications, la vendre, réutiliser le code, le nom **StreamLab**, l'icône, l'interface ou les captures
+dans un autre projet, ou se servir de ce dépôt pour entraîner une IA. Ce n'est pas une licence open source.
+
+> ⚠️ **Décharge de responsabilité.** L'appli est fournie **« en l'état », sans aucune garantie**.
+> Si tu la télécharges, la compiles, l'installes ou l'utilises, tu le fais **à tes seuls risques et sous ta seule
+> responsabilité**. Dans toute la mesure permise par la loi, l'auteur **n'est en aucun cas responsable de ce que
+> tu en fais** ni de ses conséquences : les sources et contenus que tu ajoutes et leur légalité, l'usage en voiture
+> (le conducteur reste seul responsable de sa conduite ; l'édition Passagers est réservée aux passagers et à la
+> voiture à l'arrêt), les dommages, pertes de données, frais de données mobiles, ou toute version modifiée par un tiers.
+
 Voir [LICENSE](LICENSE) et [NOTICE](NOTICE.md).
 
 Les noms et logos de services tiers (Netflix, YouTube, Prime Video, Disney+, Android Auto, Google Cast…)
@@ -221,4 +232,8 @@ appartiennent à leurs propriétaires respectifs. StreamLab n'est affilié à au
 - **Two editions**: the Google Play edition (audio in Android Auto) and a personal "Passengers" edition (= the whole Play app + the car screen, same code) that uses Android Auto's official *parked apps* category: video while parked, audio only while driving, back to full screen when parked again.
 - StreamLab provides **no content**: users add their own lawful sources.
 
-**All rights reserved.** This repository is public for viewing only; no open-source licence is granted. Google Play link: *coming soon*.
+**All rights reserved.** You may view, download, build and install the app on your own devices for personal, non-commercial use. Redistribution, publishing (including on app stores), commercial use and reuse of the code, name, icon or interface require written permission; this is not an open-source licence.
+
+> ⚠️ **Disclaimer.** Provided **"as is", without any warranty**. You download, build, install and use it **entirely at your own risk**. To the fullest extent permitted by law, the author is **in no way liable for what you do with it**: the sources and content you add, use in a car (the driver alone is responsible for driving; the Passengers edition is for passengers and parked cars only), any damage, data loss or charges, or versions modified by others.
+
+Google Play link: *coming soon*.
