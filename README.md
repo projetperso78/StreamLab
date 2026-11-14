@@ -15,6 +15,7 @@ Application Android native (Kotlin · Jetpack Compose · Media3), sans compte, s
 ![Langues](https://img.shields.io/badge/Langues-FR%20%C2%B7%20EN%20%C2%B7%20AR-555)
 ![Licence](https://img.shields.io/badge/Licence-Tous%20droits%20r%C3%A9serv%C3%A9s-critical)
 
+<a href="https://github.com/projetperso78/StreamLab/releases/latest"><b>⬇️ Télécharger Passagers (APK)</b></a> ·
 <a href="#installer">Installer</a> ·
 <a href="#ce-que-fait-streamlab-de-a-%C3%A0-z">Fonctions</a> ·
 <a href="#android-auto">Android Auto</a> ·
@@ -195,6 +196,9 @@ Captures faites sur un écran secondaire de 1920×720 de l'émulateur Android, q
 ## Installer
 
 **Google Play** — *bientôt*.
+
+**StreamLab Passagers (APK)** — l'appli complète + l'écran voiture : [⬇️ télécharger la dernière version](https://github.com/projetperso78/StreamLab/releases/latest).
+Ouvre le fichier sur ton téléphone pour l'installer, puis suis les étapes de la section [Android Auto](#android-auto) pour l'écran voiture.
 
 **Depuis les sources** (JDK 17, Android SDK 36) :
 

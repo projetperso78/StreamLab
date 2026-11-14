@@ -15,6 +15,8 @@
 ![Languages](https://img.shields.io/badge/Languages-FR%20%C2%B7%20EN%20%C2%B7%20AR-555)
 ![Licence](https://img.shields.io/badge/Licence-All%20rights%20reserved-critical)
 
+<p><a href="https://github.com/projetperso78/StreamLab/releases/latest"><b>⬇️ تنزيل نسخة الركاب (APK)</b></a></p>
+
 <img src="docs/screenshots/11-bienvenue-arabe.png" width="200" alt="شاشة الترحيب بالعربية">
 <img src="docs/screenshots/12-accueil-arabe.png" width="200" alt="الصفحة الرئيسية بالعربية">
 <img src="docs/screenshots/13-radio-arabe.png" width="200" alt="الراديو بالعربية">
@@ -188,6 +190,9 @@
 ## التثبيت
 
 **Google Play** — *قريبًا*.
+
+**StreamLab للركاب (APK)** — التطبيق الكامل + شاشة السيارة: [⬇️ تنزيل أحدث إصدار](https://github.com/projetperso78/StreamLab/releases/latest).
+افتح الملف على هاتفك لتثبيته، ثم اتّبع خطوات قسم أندرويد أوتو لشاشة السيارة.
 
 **من الشيفرة المصدرية** (JDK 17، Android SDK 36):
 
