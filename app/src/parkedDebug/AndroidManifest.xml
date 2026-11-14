@@ -1,0 +1,56 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <queries>
+        <package android:name="app.cleanroom.streamlab" />
+    </queries>
+
+    <application
+        android:label="StreamLab Passagers"
+        android:appCategory="game"
+        tools:replace="android:label">
+
+
+        <activity
+            android:name=".MainActivity"
+            tools:node="remove" />
+
+        <service
+            android:name=".player.PlaybackService"
+            tools:node="remove" />
+
+        <activity
+            android:name=".PassengerRadioActivity"
+            android:exported="false"
+            android:label="Radio - StreamLab Passagers"
+            android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout|density"
+            android:resizeableActivity="true" />
+
+        <activity
+            android:name=".PassengerPlayerActivity"
+            android:exported="false"
+            android:label="TV - StreamLab Passagers"
+            android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout|density"
+            android:resizeableActivity="true" />
+
+        <activity
+            android:name=".CarServicesActivity"
+            android:exported="true"
+            tools:replace="android:exported,android:label"
+            android:label="StreamLab Passagers"
+            android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout|density"
+            android:resizeableActivity="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- Personal build only (AGENTS.md exception). Android Auto runs parked apps only in the
+                     "game" category (developer.android.com/training/cars/parked/auto) and closes them as
+                     soon as the car moves; playback also pauses on onPause, which Android Auto triggers
+                     when it covers the screen. The Play build never declares any of this. -->
+                <category android:name="android.intent.category.CAR_LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
+

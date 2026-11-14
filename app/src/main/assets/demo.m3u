@@ -1,0 +1,3 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="streamlab-demo-offline" group-title="Demo",StreamLab offline demo pattern
+fixture://demo.mp4

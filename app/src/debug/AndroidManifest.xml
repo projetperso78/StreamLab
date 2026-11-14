@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <receiver
+            android:name=".AaosFocusFixtureReceiver"
+            android:exported="true"
+            android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="app.cleanroom.streamlab.qa.SEED_AUDIO" />
+                <action android:name="app.cleanroom.streamlab.qa.CLEAN_AUDIO" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

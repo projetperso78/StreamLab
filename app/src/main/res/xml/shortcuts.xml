@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="drive"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/shortcut_drive">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="app.cleanroom.streamlab"
+            android:targetClass="app.cleanroom.streamlab.MainActivity">
+            <extra android:name="initial_section" android:value="Drive" />
+        </intent>
+    </shortcut>
+    <shortcut
+        android:shortcutId="radio"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/shortcut_radio">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="app.cleanroom.streamlab"
+            android:targetClass="app.cleanroom.streamlab.MainActivity">
+            <extra android:name="initial_section" android:value="RadioNear" />
+        </intent>
+    </shortcut>
+</shortcuts>

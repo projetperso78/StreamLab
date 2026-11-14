@@ -1,0 +1,19 @@
+<resources>
+    <!-- AppCompat parent: the Cast device picker is an AppCompat dialog and crashes on a plain Material theme. -->
+    <style name="Theme.StreamLab" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#FF0B1118</item>
+        <item name="colorPrimaryDark">#FF0B1118</item>
+        <item name="colorAccent">#FF73E0BD</item>
+        <item name="android:windowBackground">#FF0B1118</item>
+        <item name="android:colorBackground">#FF0B1118</item>
+    </style>
+    <style name="Theme.StreamLab.CastButton" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#FF10181B</item>
+        <item name="colorPrimaryDark">#FF10181B</item>
+        <item name="colorAccent">#FF8EE2C1</item>
+        <item name="android:colorBackground">#FF10181B</item>
+        <item name="android:windowBackground">#FF10181B</item>
+        <item name="android:colorControlNormal">#FFFFFFFF</item>
+        <item name="android:colorControlActivated">#FF8EE2C1</item>
+    </style>
+</resources>

@@ -1,0 +1,46 @@
+.gradle/
+.gradle-local/
+.gradle-verification/
+.kotlin/
+.android-sdk/
+.idea/
+local.properties
+build/
+app/build/
+app/verification-build/
+app/codex-verify-build/
+artifacts/
+*.iml
+
+# AppFactory: private runtime data, local evidence and credentials
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+.env
+.env.*
+!.env.example
+*.log
+# Keep third-party binaries local pending rights/provenance review
+/app/libs/*.aar
+# Non-public playlists and local QA fixtures
+/qa-fixtures/
+# Device screenshots/UI dumps: retained in local backup, not source history
+/tools/dhu/*.png
+/tools/dhu/*.xml
+# Local diagnostic excerpts retained by AppFactory full snapshot
+/ecc-*.txt
+/ecc-services-last.txt
+/ECC_ANDROID_AUTO_LAST*.txt
+
+# AppFactory: detached, isolated experiment branches
+/.worktrees/
