@@ -120,7 +120,7 @@
     <string name="tv_retry">Réessayer</string>
     <string name="tv_fullscreen">Plein écran</string>
     <string name="tv_search">Rechercher une chaîne</string>
-    <string name="tv_channel_count">%1$d chaînes</string>
+    <plurals name="tv_channel_count"><item quantity="one">%1$d chaîne</item><item quantity="many">%1$d chaînes</item><item quantity="other">%1$d chaînes</item></plurals>
     <string name="tv_no_match">Aucune chaîne ne correspond à cette recherche.</string>
     <string name="player_connecting">Connexion au lecteur…</string>
     <string name="player_back_library">← Bibliothèque</string>

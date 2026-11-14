@@ -44,3 +44,4 @@ artifacts/
 
 # AppFactory: detached, isolated experiment branches
 /.worktrees/
+*.backup-*

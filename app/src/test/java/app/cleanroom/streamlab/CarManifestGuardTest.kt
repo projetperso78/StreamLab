@@ -22,6 +22,14 @@ class CarManifestGuardTest {
         assertTrue(parked.contains("android.intent.category.CAR_LAUNCHER"))
     }
 
+    @Test fun parkedBuildIsTheCompleteAppOnItsOwn() {
+        val parked = manifest("parkedDebug")
+        assertFalse("the full phone app must stay in the personal build", Regex("MainActivity\"\\s*tools:node=\"remove\"").containsMatchIn(parked))
+        assertFalse("the player must stay in the personal build", Regex("PlaybackService\"\\s*tools:node=\"remove\"").containsMatchIn(parked))
+        val car = listOf(File("src/parkedDebug/res/xml/automotive_app_desc.xml"), File("app/src/parkedDebug/res/xml/automotive_app_desc.xml")).first { it.exists() }.readText()
+        assertTrue("radio and TV sound stay in Android Auto's media screen", car.contains("name=\"media\""))
+    }
+
     @Test fun playBuildsAreNeverGames() {
         listOf("main", "debug", "release").forEach { set ->
             val text = runCatching { manifest(set) }.getOrNull() ?: return@forEach

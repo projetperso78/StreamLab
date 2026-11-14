@@ -212,7 +212,7 @@ class PassengerPlayerActivity : ComponentActivity() {
         val token = try {
             SessionToken(
                 this,
-                ComponentName(CarServicesActivity.MAIN_APP_PACKAGE, PlaybackService::class.java.name),
+                ComponentName(this@PassengerPlayerActivity, PlaybackService::class.java),
             )
         } catch (_: IllegalArgumentException) {
             previewTitle.text = getString(R.string.pass_tv)

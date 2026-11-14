@@ -47,8 +47,9 @@ et sans que rien ne quitte ton téléphone.
 
 | | **StreamLab** (Google Play) | **StreamLab Passagers** (édition personnelle) |
 |---|---|---|
-| Radio, TV, vidéos, Cast, favoris… | ✅ | ✅ |
-| Android Auto — radio et audio | ✅ | ✅ |
+| Toute l'appli : radio, TV, multivue, vidéos, disque réseau, Cast, favoris, réveil… | ✅ | ✅ identique |
+| Android Auto — radio et son des chaînes (écran multimédia) | ✅ | ✅ |
+| S'installe seule (aucune autre appli requise) | ✅ | ✅ |
 | Android Auto — **vidéo à l'arrêt** (voiture garée) | — | ✅ |
 | En roulant | audio uniquement | Android Auto ferme l'image, **le son continue** |
 | De nouveau à l'arrêt | — | **la même chaîne revient en plein écran** |
@@ -95,6 +96,7 @@ Aucune règle de sécurité de conduite n'est contournée.
 <p align="center">
 <img src="docs/screenshots/04-tv-plein-ecran.png" width="220" alt="TV en plein écran">
 <img src="docs/screenshots/05-multivue.png" width="220" alt="Multivue">
+<img src="docs/screenshots/09-ajouter-chaines.png" width="220" alt="Ajouter mes chaînes">
 </p>
 
 ### 🎬 Vidéos et disque réseau
@@ -137,13 +139,14 @@ Rien à faire : branche ton téléphone, StreamLab apparaît dans les applis mul
 ### Édition Passagers (vidéo à l'arrêt)
 Prérequis : **Android 15 ou plus** et un écran de voiture tactile.
 
-1. Installe l'APK `parkedDebug` (nom affiché : **StreamLab Passagers**).
+1. Installe l'APK `parkedDebug` (nom affiché : **StreamLab Passagers**). C'est l'appli complète : pas besoin d'installer aussi la version Play.
 2. Sur le téléphone : **Android Auto → Paramètres** → touche 10 fois **« Version »** pour activer le mode développeur.
 3. Menu ⋮ → **Paramètres pour les développeurs** → coche **« Sources inconnues »**.
 4. Rebranche le téléphone : l'appli apparaît dans le lanceur de la voiture.
 
-**À l'arrêt** la chaîne s'affiche en plein écran ; **en roulant** Android Auto ferme l'image et **le son continue** ;
-**de nouveau à l'arrêt**, la même chaîne revient en plein écran.
+**À l'arrêt** la chaîne s'affiche en plein écran ; **en roulant** Android Auto ferme l'image et **le son continue**
+(avec les commandes sur l'écran multimédia et au volant) ; **de nouveau à l'arrêt**, la même chaîne revient en plein écran.
+Dans les réglages de l'écran voiture, l'option **« Garder l'écran allumé »** évite la mise en veille pendant la vidéo.
 
 ---
 

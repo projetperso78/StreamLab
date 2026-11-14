@@ -311,7 +311,7 @@ fun TvPreviewPanel(allChannels: List<CatalogChannelRow>, controller: MediaContro
                 }
             }
             androidx.compose.foundation.layout.FlowRow(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.Center) {
-                Text(stringResource(R.string.tv_channel_count, channels.size), style = MaterialTheme.typography.labelMedium,
+                Text(androidx.compose.ui.res.pluralStringResource(R.plurals.tv_channel_count, channels.size, channels.size), style = MaterialTheme.typography.labelMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.align(Alignment.CenterVertically).padding(end = 8.dp))
                 TextButton(
                     onClick = {

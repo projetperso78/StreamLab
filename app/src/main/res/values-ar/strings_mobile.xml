@@ -120,7 +120,7 @@
     <string name="tv_retry">حاول مجددًا</string>
     <string name="tv_fullscreen">ملء الشاشة</string>
     <string name="tv_search">البحث عن قناة</string>
-    <string name="tv_channel_count">%1$d قنوات</string>
+    <plurals name="tv_channel_count"><item quantity="zero">%1$d قناة</item><item quantity="one">قناة واحدة</item><item quantity="two">قناتان</item><item quantity="few">%1$d قنوات</item><item quantity="many">%1$d قناة</item><item quantity="other">%1$d قناة</item></plurals>
     <string name="tv_no_match">لا توجد قنوات تطابق هذا البحث.</string>
     <string name="player_connecting">جارٍ الاتصال بالمشغّل…</string>
     <string name="player_back_library">← المكتبة</string>

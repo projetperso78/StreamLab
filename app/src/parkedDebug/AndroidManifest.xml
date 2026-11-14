@@ -1,26 +1,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <queries>
-        <package android:name="app.cleanroom.streamlab" />
-    </queries>
-
     <application
         android:label="StreamLab Passagers"
         android:appCategory="game"
         tools:replace="android:label">
 
-
-        <activity
-            android:name=".MainActivity"
-            tools:node="remove" />
-
-        <service
-            android:name=".player.PlaybackService"
-            tools:node="remove" />
+        <!-- Complete app on its own: the whole phone app and its player are kept. A single phone
+             icon: the car launcher entry below opens this screen when tapped on the phone. -->
+        <activity android:name=".MainActivity" android:exported="false" tools:node="merge" tools:replace="android:exported">
+            <intent-filter tools:node="removeAll" />
+        </activity>
 
         <activity
             android:name=".PassengerRadioActivity"
+            android:taskAffinity="app.cleanroom.streamlab.car.screen"
             android:exported="false"
             android:label="Radio - StreamLab Passagers"
             android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout|density"
@@ -28,6 +22,7 @@
 
         <activity
             android:name=".PassengerPlayerActivity"
+            android:taskAffinity="app.cleanroom.streamlab.car.screen"
             android:exported="false"
             android:label="TV - StreamLab Passagers"
             android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout|density"
@@ -35,6 +30,7 @@
 
         <activity
             android:name=".CarServicesActivity"
+            android:taskAffinity="app.cleanroom.streamlab.car.screen"
             android:exported="true"
             tools:replace="android:exported,android:label"
             android:label="StreamLab Passagers"

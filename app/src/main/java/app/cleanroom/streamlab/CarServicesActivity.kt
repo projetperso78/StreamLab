@@ -28,6 +28,13 @@ class CarServicesActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         returnServiceId = intent.getStringExtra(EXTRA_RETURN_SERVICE_ID)
+        // Personal car build: its single phone icon opens the complete app; the passenger home
+        // is for the car screen (Android Auto shows parked apps on its own display).
+        if (packageName.endsWith(".car") && onPhoneScreen()) {
+            startActivity(Intent(this, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            finish()
+            return
+        }
         if (savedInstanceState == null && packageName.endsWith(".car")) resumeVideoAfterDriving()
         val launcher = ServiceLauncher(this)
         setContent {
@@ -71,7 +78,7 @@ class CarServicesActivity : ComponentActivity() {
         } else if (packageName.endsWith(".car") && section == "Radio") {
             Intent().setClassName(packageName, "app.cleanroom.streamlab.PassengerRadioActivity")
         } else {
-            Intent().setClassName(MAIN_APP_PACKAGE, MainActivity::class.java.name)
+            Intent(this, MainActivity::class.java)
                 .putExtra(MainActivity.EXTRA_INITIAL_SECTION, section)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
         }
@@ -87,7 +94,7 @@ class CarServicesActivity : ComponentActivity() {
      * as sound. Reopened once parked, the app goes straight back to that channel in full screen.
      */
     private fun resumeVideoAfterDriving() {
-        val token = androidx.media3.session.SessionToken(this, android.content.ComponentName(MAIN_APP_PACKAGE, "app.cleanroom.streamlab.player.PlaybackService"))
+        val token = androidx.media3.session.SessionToken(this, android.content.ComponentName(this, app.cleanroom.streamlab.player.PlaybackService::class.java))
         val future = androidx.media3.session.MediaController.Builder(applicationContext, token).buildAsync()
         future.addListener({
             val controller = runCatching { future.get() }.getOrNull() ?: return@addListener
@@ -101,6 +108,12 @@ class CarServicesActivity : ComponentActivity() {
                 }
             }
         }, androidx.core.content.ContextCompat.getMainExecutor(this))
+    }
+
+    @Suppress("DEPRECATION")
+    private fun onPhoneScreen(): Boolean {
+        val id = if (android.os.Build.VERSION.SDK_INT >= 30) display?.displayId else windowManager.defaultDisplay.displayId
+        return id == null || id == android.view.Display.DEFAULT_DISPLAY
     }
 
     override fun onNewIntent(intent: Intent) {

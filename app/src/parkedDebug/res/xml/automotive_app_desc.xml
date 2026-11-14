@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <automotiveApp>
+    <!-- Media: radio and TV sound in Android Auto's media screen (same as the Play build).
+         Template: the parked full-screen app on the car launcher. -->
+    <uses name="media" />
     <uses name="template" />
 </automotiveApp>

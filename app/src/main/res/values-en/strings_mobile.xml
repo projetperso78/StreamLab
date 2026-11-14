@@ -120,7 +120,7 @@
     <string name="tv_retry">Try again</string>
     <string name="tv_fullscreen">Full screen</string>
     <string name="tv_search">Search channels</string>
-    <string name="tv_channel_count">%1$d channels</string>
+    <plurals name="tv_channel_count"><item quantity="one">%1$d channel</item><item quantity="other">%1$d channels</item></plurals>
     <string name="tv_no_match">No channels match this search.</string>
     <string name="player_connecting">Connecting to player…</string>
     <string name="player_back_library">← Library</string>
