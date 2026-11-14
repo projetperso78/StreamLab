@@ -1,7 +1,7 @@
 # Politique de confidentialité — StreamLab
 
 *Dernière mise à jour : [DATE DE PUBLICATION]*
-*Éditeur : Younes AJBILOU — Contact : streamlab.contact@gmail.com*
+*Éditeur : Younes AJBILOU — Contact : contactstreamlab@gmail.com*
 
 > À compléter avant publication : la date. Cette page doit être publiée à une adresse web
 > publique (par exemple une page GitHub Pages ou Google Sites gratuite) et cette adresse doit être
@@ -61,7 +61,7 @@ StreamLab ne s'adresse pas spécifiquement aux enfants et ne collecte sciemment 
 
 ## 7. Vos droits
 
-Aucune donnée personnelle n'étant transmise à l'éditeur, celui-ci n'en détient aucune. Pour toute question : streamlab.contact@gmail.com. Vous pouvez saisir la CNIL (www.cnil.fr).
+Aucune donnée personnelle n'étant transmise à l'éditeur, celui-ci n'en détient aucune. Pour toute question : contactstreamlab@gmail.com. Vous pouvez saisir la CNIL (www.cnil.fr).
 
 ## 8. Modifications
 
@@ -71,7 +71,7 @@ Toute modification de cette politique sera publiée sur cette page avec une nouv
 
 # Privacy policy — StreamLab (English)
 
-*Last updated: [PUBLICATION DATE] — Publisher: Younes AJBILOU — Contact: streamlab.contact@gmail.com*
+*Last updated: [PUBLICATION DATE] — Publisher: Younes AJBILOU — Contact: contactstreamlab@gmail.com*
 
 - StreamLab requires **no account**, shows **no ads** and contains **no analytics or tracking**.
 - Your playlists, favourites, history and settings **stay on your device**; the publisher has no access to them. Playlist/guide/channel addresses and Xtream credentials are **encrypted on the device** (Android Keystore, AES-GCM). Android auto-backup is disabled.
@@ -80,4 +80,4 @@ Toute modification de cette politique sera publiée sur cette page avec une nouv
 - "Near you" radios use the mobile network / SIM / device region country **on the device**. No GPS, no location permission; nothing is stored or sent.
 - The radio alarm uses Android's "Alarms & reminders" permission, which you grant in Android settings, only to ring on time. The parental control stores only an irreversible hash of the parent code, on the device.
 - Service buttons (Netflix, YouTube, Prime Video…) open the publisher's **official app** or its Google Play page. StreamLab never reads or stores their credentials or content.
-- Questions: streamlab.contact@gmail.com.
+- Questions: contactstreamlab@gmail.com.
