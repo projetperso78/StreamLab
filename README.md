@@ -45,6 +45,11 @@ et sans que rien ne quitte ton téléphone.
 
 ## Deux éditions
 
+> **StreamLab Passagers = toute l'appli légale + l'écran voiture.**
+> Même code, mêmes fonctions, mêmes réglages et mêmes langues que l'édition Google Play,
+> avec en plus l'écran plein format sur la voiture à l'arrêt. Le code des deux éditions est dans ce dépôt
+> (`app/src/main` pour l'appli commune, `app/src/parkedDebug` pour l'écran voiture).
+
 | | **StreamLab** (Google Play) | **StreamLab Passagers** (édition personnelle) |
 |---|---|---|
 | Toute l'appli : radio, TV, multivue, vidéos, disque réseau, Cast, favoris, réveil… | ✅ | ✅ identique |
@@ -213,7 +218,7 @@ appartiennent à leurs propriétaires respectifs. StreamLab n'est affilié à au
 - Your own TV channels (M3U, Xtream Codes, XMLTV), sorted by country and language, full-screen player with now/next, channel health check, **multiview (2–4 channels)**, picture-in-picture, playback speed.
 - Home network drive (WebDAV) without copying files, continue watching, external player, Google Cast, QR sharing, kids mode with PIN, data saver on mobile data, offline mode.
 - French, English and Arabic (RTL). Dark, light or system theme.
-- **Two editions**: the Google Play edition (audio in Android Auto) and a personal "Passengers" edition that uses Android Auto's official *parked apps* category: video while parked, audio only while driving, back to full screen when parked again.
+- **Two editions**: the Google Play edition (audio in Android Auto) and a personal "Passengers" edition (= the whole Play app + the car screen, same code) that uses Android Auto's official *parked apps* category: video while parked, audio only while driving, back to full screen when parked again.
 - StreamLab provides **no content**: users add their own lawful sources.
 
 **All rights reserved.** This repository is public for viewing only; no open-source licence is granted. Google Play link: *coming soon*.
